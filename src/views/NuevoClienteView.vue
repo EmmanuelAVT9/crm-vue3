@@ -12,10 +12,12 @@
 <template>
     <div>
         <div class="flex justify-end">
-            <RouterLink to="agregar-cliente">
-                Agregar Cliente
+            <RouterLink to="inicio"  
+            >
+                Volver
             </RouterLink>
         </div>
-        <Heading>{{ titulo }}</Heading>
+
+        <Heading>{{ titulo  }}</Heading>
     </div>
 </template>
