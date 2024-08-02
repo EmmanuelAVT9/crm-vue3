@@ -1,13 +1,14 @@
 <script setup>
 import { onMounted, ref, computed } from 'vue'
-import axios from 'axios'
+import ClienteService from '../services/ClienteService'
 import RouterLink from '../components/UI/RouterLink.vue';
 import Heading from '../components/UI/Heading.vue';
+import ListadoClientes from '../components/ListadoClientes.vue';
 
 const clientes = ref([])
 
 onMounted(() => {
-    axios.get('http://localhost:4000/clientes')
+    ClienteService.obtenerClientes()
         .then(({ data }) => {
             console.log(data)
             clientes.value = data
@@ -52,7 +53,15 @@ const existenClientes = computed(() => {
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white">
-
+                                <!-- <tr v-for="cliente in clientes" :key="cliente.id" class="bg-white">
+                                    {{ clientes }}
+                                </tr> -->
+                                <ListadoClientes
+                                    v-for="cliente in clientes" 
+                                    :key="cliente.id"
+                                    :cliente="cliente"
+                                    class="bg-white"
+                                />
                             </tbody>
                         </table>
                     </div>
