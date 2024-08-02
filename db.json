@@ -1,22 +1,24 @@
 {
   "clientes": [
     {
-      "id": "29be",
-      "nombre": "Emma",
+      "id": "1",
+      "nombre": "Emmanuel",
       "apellido": "Vázquez",
-      "email": "test1@gmail.com",
+      "email": "test1@dominio.com",
       "telefono": "555-555-5555",
-      "empresa": "Diafi",
-      "puesto": "Diseñador UX"
+      "empresa": "Globant",
+      "puesto": "Fullstack Developer",
+      "estado": 1
     },
     {
-      "id": "d9e2",
-      "nombre": "Emma con router",
-      "apellido": "Zavala",
-      "email": "test2@dominio.com",
-      "telefono": "555-555-5556",
-      "empresa": "Bimbo",
-      "puesto": "Analista JR"
+      "id": "2",
+      "nombre": "Emmanuel",
+      "apellido": "Vázquez",
+      "email": "test1@dominio.com",
+      "telefono": "555-555-5555",
+      "empresa": "Globant",
+      "puesto": "Fullstack Developer",
+      "estado": 0
     }
   ]
 }
