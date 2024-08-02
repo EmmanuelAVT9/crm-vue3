@@ -1,18 +1,11 @@
 <script setup>
 import { FormKit } from '@formkit/vue'
 import { useRouter} from 'vue-router'
-import axios from '../lib/axios'
+import ClienteService from '../services/ClienteService'
 import RouterLink from '../components/UI/RouterLink.vue';
 import Heading from '../components/UI/Heading.vue';
 
-//const route = useRoute()
 const router = useRouter()
-
-/* console.log('Soy el route',route)
-console.log('Soy el route fullpath',route.fullPath)
-console.log('Soy el route hash',route.hash)
-console.log('Soy el route name',route.name)
-console.log('Soy el router',router) */
 
 defineProps({
     titulo: {
@@ -21,13 +14,10 @@ defineProps({
 })
 
 const handleSubmit = (data) => {
-    //console.log(data)
-    axios.post('/clientes', data)
+    data.estado = 1
+    ClienteService.agregarCliente(data)
         .then((response) => {
             console.log(response)
-            // Redireccionar
-            // con JavaScript windows.location.href = '/'
-            //router.push('/')
             router.push({ name: 'listado-clientes'})
         }).catch((err) => {
             console.log(err)
