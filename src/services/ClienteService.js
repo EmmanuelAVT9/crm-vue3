@@ -10,5 +10,9 @@ export default {
     obtenerCliente(id) {
         //console.log(id)
         return api.get('/clientes/' + id)
+    },
+    actualizarCliente(id, data){
+        //onsole.log(id)
+        return api.patch('/clientes/' + id, data)
     }
 }
