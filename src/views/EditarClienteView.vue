@@ -7,6 +7,7 @@ import RouterLink from '../components/UI/RouterLink.vue';
 import Heading from '../components/UI/Heading.vue';
 
 const route = useRoute()
+const router = useRouter()
 
 const { id } = route.params
 console.log(id)
@@ -28,6 +29,9 @@ defineProps({
 })
 
 const handleSubmit = (data) => {
+    ClienteService.actualizarCliente(id, data)
+        .then(() => router.push({ name: 'listado-clientes'}))
+        .catch((error) => console.error(error))
 }
 </script>
 
@@ -45,7 +49,7 @@ const handleSubmit = (data) => {
             <div class="mx-auto md:w-2/3 py-20 px-6">
                 <FormKit 
                     type="form"
-                    submit-label="Agregar Cliente"
+                    submit-label="Guardar Cambios"
                     incomplete-message="No se pudo enviar, revisa los mensajes"
                     @submit="handleSubmit"
                     :value="formData"

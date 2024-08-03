@@ -2,7 +2,7 @@
   "clientes": [
     {
       "id": "1",
-      "nombre": "Emmanuel",
+      "nombre": "Emmanuel actualiz",
       "apellido": "Vázquez",
       "email": "test1@dominio.com",
       "telefono": "555-555-5555",
@@ -12,12 +12,12 @@
     },
     {
       "id": "2",
-      "nombre": "Emmanuel",
+      "nombre": "Alejandro",
       "apellido": "Vázquez",
       "email": "test1@dominio.com",
       "telefono": "555-555-5555",
       "empresa": "Globant",
-      "puesto": "Fullstack Developer",
+      "puesto": "Fullstack Developer JR",
       "estado": 0
     }
   ]
