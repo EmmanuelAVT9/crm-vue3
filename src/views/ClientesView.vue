@@ -25,6 +25,17 @@ defineProps({
 const existenClientes = computed(() => {
     return clientes.value.length > 0
 })
+
+//Funcion para cambiar el estado
+const actualizarEstado = ({id, estado}) => {
+    // console.log('Actualizando...', data)
+    ClienteService.cambiarEstado(id, {estado: !estado})
+        .then(() => {
+            const i = clientes.value.findIndex( cliente => cliente.id === id)
+            clientes.value[i].estado = !estado
+        }).catch(error => console.log(error));
+}
+
 </script>
 
 <template>
@@ -61,6 +72,7 @@ const existenClientes = computed(() => {
                                     :key="cliente.id"
                                     :cliente="cliente"
                                     class="bg-white"
+                                    @actualizar-estado="actualizarEstado"
                                 />
                             </tbody>
                         </table>
